@@ -1,5 +1,6 @@
 package in.hibernate;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import jakarta.persistence.Column;
@@ -93,6 +94,11 @@ public class Address {
 	}
 	public void setX(double x) {
 		this.x = x;
+	}
+	@Override
+	public String toString() {
+		return "Address [address_id=" + address_id + ", city=" + city + ", street=" + street + ", dateAdded="
+				+ dateAdded + ", isOpen=" + isOpen + ", image=" + Arrays.toString(image) + ", x=" + x + "]";
 	}
 
 
