@@ -31,7 +31,9 @@ public class Address {
 
 	private boolean isOpen;
 
+	// ye new line add ki hai
 	@Lob
+	@Column(name = "photo", columnDefinition="BLOB")
 	private byte[] image;
 	@Transient
 	private double x;
