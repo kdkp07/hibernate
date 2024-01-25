@@ -34,7 +34,7 @@ public class Address {
 
 	// ye new line add ki hai
 	@Lob
-	@Column(name = "photo", columnDefinition="BLOB")
+	@Column(name = "photo", columnDefinition="LONGBLOB")
 	private byte[] image;
 	@Transient
 	private double x;
