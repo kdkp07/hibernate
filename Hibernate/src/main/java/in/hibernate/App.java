@@ -35,15 +35,14 @@ public class App
 
 		// creating object of Address class
 		Address add = new Address();
-		add.setAddress_id(23455);
-		add.setCity("Bangalore");
-		add.setStreet("545,Whitefield");
+		add.setCity("Delhi");
+		add.setStreet("759,Dwarka");
 		add.setDateAdded(new Date());
 		add.setX(34.22);
 		add.setOpen(true);
 
 		// reading an image
-		FileInputStream file = new FileInputStream("src/main/java/sample2x2.png"); 
+		FileInputStream file = new FileInputStream("src/main/java/pic.jpg"); 
 		byte[] data = new byte[file.available()];
 		file.read(data);
 		add.setImage(data);
@@ -52,7 +51,9 @@ public class App
 
 		Transaction tx = session.beginTransaction();// starting the transaction
 		//		session.save(st);
-		session.save(add);
+		//		session.save(add);
+		Address address = session.get(Address.class, 10);
+		System.out.println(address);
 		tx.commit();
 
 
