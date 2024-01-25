@@ -1,5 +1,6 @@
 package in.hibernate;
 
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Date;
 
@@ -42,10 +43,10 @@ public class App
 		add.setOpen(true);
 
 		// reading an image
-		//		FileInputStream file = new FileInputStream("src/main/java/pic.jpg"); 
-		//		byte[] data = new byte[file.available()];
-		//		file.read(data);
-		//		add.setImage(data);
+		FileInputStream file = new FileInputStream("src/main/java/sample2x2.png"); 
+		byte[] data = new byte[file.available()];
+		file.read(data);
+		add.setImage(data);
 
 		Session session = factory.openSession();
 
@@ -57,7 +58,7 @@ public class App
 
 		session.close();
 
-
+		System.out.println("Done....");
 
 
 	}	
