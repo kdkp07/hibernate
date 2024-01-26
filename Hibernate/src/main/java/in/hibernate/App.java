@@ -11,7 +11,7 @@ import org.hibernate.cfg.Configuration;
 
 public class App 
 {
-	@SuppressWarnings("deprecation")
+	//	@SuppressWarnings("deprecation")
 	public static void main( String[] args ) throws IOException
 	{
 		System.out.println( "Jai shree Ganesh" );
@@ -58,7 +58,7 @@ public class App
 
 
 		session.close();
-
+		file.close();
 		System.out.println("Done....");
 
 
