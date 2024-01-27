@@ -3,6 +3,7 @@ package in.map;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity
 public class Answer {
@@ -10,6 +11,16 @@ public class Answer {
 	@Column(name = "answer_id")
 	private int answerId;
 	private String answer;
+
+	@OneToOne(mappedBy = "answer")
+	private Question question;
+
+	public Question getQuestion() {
+		return question;
+	}
+	public void setQuestion(Question question) {
+		this.question = question;
+	}
 	public int getAnswerId() {
 		return answerId;
 	}

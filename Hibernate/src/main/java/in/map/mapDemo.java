@@ -29,8 +29,10 @@ public class mapDemo {
 		Answer ans2 = new Answer();
 		ans1.setAnswerId(21);
 		ans1.setAnswer("Java is a programming language");
+		ans1.setQuestion(q1);
 		ans2.setAnswerId(22);
 		ans2.setAnswer("API to work with objects in Java");
+		ans2.setQuestion(q2);
 		q1.setAnswer(ans1);
 		q2.setAnswer(ans2);
 
