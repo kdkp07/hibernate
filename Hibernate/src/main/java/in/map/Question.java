@@ -1,10 +1,11 @@
 package in.map;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Question {
@@ -13,16 +14,10 @@ public class Question {
 	private int questionId;
 	private String question;
 
-	@OneToOne
-	@JoinColumn(name = "a_id")
-	private Answer answer;
+	@OneToMany(mappedBy = "question")
+	private List<Answer> ans ; 
 
-	public Question(int questionId, String question, Answer answer) {
-		super();
-		this.questionId = questionId;
-		this.question = question;
-		this.answer = answer;
-	}
+
 	public Question() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -39,12 +34,13 @@ public class Question {
 	public void setQuestion(String question) {
 		this.question = question;
 	}
-	public Answer getAnswer() {
-		return answer;
+	public List<Answer> getAns() {
+		return ans;
 	}
-	public void setAnswer(Answer answer) {
-		this.answer = answer;
+	public void setAns(List<Answer> ans) {
+		this.ans = ans;
 	}
+
 
 
 }
