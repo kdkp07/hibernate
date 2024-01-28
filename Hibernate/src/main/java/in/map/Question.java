@@ -40,6 +40,10 @@ public class Question {
 	public void setAns(List<Answer> ans) {
 		this.ans = ans;
 	}
+	@Override
+	public String toString() {
+		return "Question [questionId=" + questionId + ", question=" + question + ", ans=" + ans + "]";
+	}
 
 
 
