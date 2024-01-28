@@ -25,13 +25,13 @@ public class mapDemo {
 		Answer ans1 = new Answer();
 		Answer ans2 = new Answer();
 		Answer ans3 = new Answer();
-		ans1.setAnswerId(21);
+		ans1.setAnswerId(01);
 		ans1.setAnswer("Java is a programming language");
 		ans1.setQuestion(q1);
-		ans2.setAnswerId(22);
+		ans2.setAnswerId(02);
 		ans2.setAnswer("API to work with objects in Java");
 		ans2.setQuestion(q1);
-		ans3.setAnswerId(23);
+		ans3.setAnswerId(03);
 		ans3.setAnswer("It has various frameworks");
 		ans3.setQuestion(q1);
 
@@ -41,6 +41,10 @@ public class mapDemo {
 		list1.add(ans3);
 		q1.setAns(list1);
 
+		// fetching data
+		Question question = session.get(Question.class, 12);
+		System.out.println(question);
+		// saving the objects to database
 		session.save(q1);
 		session.save(ans1);
 		session.save(ans2);
