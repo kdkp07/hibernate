@@ -20,25 +20,24 @@ public class mapDemo {
 
 		// question object creation 
 		Question q1 = new Question();
-		q1.setQuestionId(11);
-		q1.setQuestion("What is Java?");
+		q1.setQuestionId(21);
+		q1.setQuestion("What is Hibernate?");
 		Answer ans1 = new Answer();
 		Answer ans2 = new Answer();
 		Answer ans3 = new Answer();
-		ans1.setAnswerId(01);
-		ans1.setAnswer("Java is a programming language");
+		ans1.setAnswerId(31);
+		ans1.setAnswer("Hibernate is a ORM tool");
 		ans1.setQuestion(q1);
-		ans2.setAnswerId(02);
-		ans2.setAnswer("API to work with objects in Java");
+		ans2.setAnswerId(32);
+		ans2.setAnswer("It is used to map class objects to sql table");
 		ans2.setQuestion(q1);
-		ans3.setAnswerId(03);
-		ans3.setAnswer("It has various frameworks");
-		ans3.setQuestion(q1);
+
+
 
 		List<Answer> list1 = new ArrayList<>();
 		list1.add(ans1);
 		list1.add(ans2);
-		list1.add(ans3);
+
 		q1.setAns(list1);
 
 		// fetching data
@@ -48,7 +47,7 @@ public class mapDemo {
 		session.save(q1);
 		session.save(ans1);
 		session.save(ans2);
-		session.save(ans3);
+
 
 		tx.commit();
 		session.close();
