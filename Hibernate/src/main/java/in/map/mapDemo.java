@@ -41,12 +41,16 @@ public class mapDemo {
 		q1.setAns(list1);
 
 		// fetching data
-		Question question = session.get(Question.class, 12);
-		System.out.println(question);
+		Question question = session.get(Question.class, 21);
+		System.out.println(question.getQuestion());
+
+		// lazy loading ;;;;means it loads the answer object only when its called but it has changed now to eager by providing fetch type in Question class
+		System.out.println(question.getAns().size());
+
 		// saving the objects to database
-		session.save(q1);
-		session.save(ans1);
-		session.save(ans2);
+		//		session.save(q1);
+		//		session.save(ans1);
+		//		session.save(ans2);
 
 
 		tx.commit();
